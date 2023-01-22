@@ -4,12 +4,13 @@ from typing import List
 
 
 def index_range(self, page: int, page_size: int) -> tuple:
-        """ return a tuple of size two containing a start index and an end index
-            corresponding to the range of indexes to return in a list for those
-            particular pagination parameters. """
-        last_index = page_size * page
-        first_index = last_index - page_size
-        return (first_index, last_index)
+    """ return a tuple of size two containing a start index and an end index
+        corresponding to the range of indexes to return in a list for those
+        particular pagination parameters. """
+    last_index = page_size * page
+    first_index = last_index - page_size
+    return (first_index, last_index)
+
 
 class Server:
     """Server class to paginate a database of popular baby names.
@@ -29,7 +30,7 @@ class Server:
             self.__dataset = dataset[1:]
 
         return self.__dataset
-    
+
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """ obtains the indexes and return corresponding pages """
         assert type(page) == int and page > 0
