@@ -20,7 +20,7 @@ class FIFOCache(BaseCaching):
             first_key = next(iter(self.cache_data))
             self.cache_data.pop(first_key)
             print("DISCARD: {}".format(first_key))
-
+            
     def get(self, key):
         """Must return the value in self.cache_data linked to key"""
         if self.cache_data.get(key) is None or key is None:
